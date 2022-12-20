@@ -13,6 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 public class Player {
     private Integer id;
+    private Integer botId; //-1是人工操作，else 代码
+    private String botCode;
     private Integer sx;
     private Integer sy;
     private List<Integer> steps;
@@ -20,8 +22,6 @@ public class Player {
     private boolean check_tail_increasing(int step){//检查蛇在当前回合会不会变长
         if(step <=10) return true;
         return step%3==1;
-
-
     }
 
     public List<Cell> getCells() {
